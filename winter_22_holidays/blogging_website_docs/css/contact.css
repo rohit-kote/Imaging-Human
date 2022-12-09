@@ -1,0 +1,30 @@
+.contact-content{
+    
+    background-color: rgb(235, 215, 242,0.5);
+    display: flex;
+    flex-direction: column;
+    /* margin-top: 12px; */
+    border-radius: 20px;
+    /* padding: 20px; */
+    position:relative;
+    height:fit-content;
+    padding-bottom: 15px;
+    padding-left: 100px;
+    overflow: hidden;
+}
+
+.contact-content h2{
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.form-box{
+    padding: 10px;
+}
+.form-box input{
+    width: 44vw;
+    height: 20px;
+}
+.form-box textarea{
+    width: 44vw;
+}
