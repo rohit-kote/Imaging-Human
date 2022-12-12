@@ -11,3 +11,6 @@
     font-size: 19px;
     text-decoration: none;
 }
+.blog-content-left img {
+    padding-left: 400px;
+}
