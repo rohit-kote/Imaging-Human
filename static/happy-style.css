@@ -1,0 +1,199 @@
+:root {
+
+    --secondary-color: #fdcb6e;
+    /* Soft orange */
+    --hover-primary: #a29bfe;
+    /* Lighter purple */
+    --hover-secondary: #ffeaa7;
+    /* Lighter orange */
+    --background-light: #ecf0f1;
+    /* Very light gray */
+    --text-color: #2d3436;
+    /* Charcoal gray */
+}
+
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    background: var(--background-light);
+    justify-content: center;
+    /* Center content horizontally */
+
+}
+
+.header {
+    text-align: center;
+    justify-content: center;
+    padding: 20px;
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.content-wrapper {
+    width: 80%;
+    /* Reduced width for a more centered and compact look */
+    max-width: 960px;
+    /* Smaller max-width */
+    margin: 20px auto;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background: white;
+    border-radius: 8px;
+    /* Added border-radius for softer edges */
+}
+
+.carousel {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    position: relative;
+    width: 100%;
+    /* Ensure the carousel takes full width of its container */
+    height: auto;
+    /* Adjust height based on content */
+}
+
+.media-card {
+    flex: 0 0 100%;
+    /* Each card takes full width of the carousel */
+    max-width: 100%;
+    /* Limit width to the carousel's width */
+    scroll-snap-align: start;
+    /* Ensures snapping aligns to the start of each media card */
+    margin: 0;
+    /* Remove margins between cards */
+    display: flex;
+    justify-content: center;
+    /* flex-direction: column; */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    /* Styling */
+    overflow: hidden;
+    /* Ensures no overflow content is visible */
+
+}
+
+.media-card:hover {
+    /* transform: scale(1); */
+    /* Subtle scale increase */
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    background-color: #d2dfe2;
+}
+
+.nav-btn {
+    background-color: var(--primary-color);
+    color: black;
+    border: none;
+    /* border-radius: 50%; */
+    padding: 8px 12px;
+    /* Slightly smaller padding */
+    font-size: 36px;
+    /* Smaller font size */
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: background-color 0.3s ease;
+}
+
+.nav-btn:hover {
+    background-color: var(--hover-primary);
+}
+
+.nav-btn#prev-content {
+    left: 50px;
+}
+
+.nav-btn#next-content {
+    right: 10%;
+}
+
+.vote-container {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+    background: var(--background-light);
+}
+
+.vote-btn {
+    background-color: var(--secondary-color);
+    border: none;
+    border-radius: 50%;
+    width: 35px;
+    /* Smaller buttons */
+    height: 35px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.vote-btn:hover {
+    background-color: var(--hover-secondary);
+}
+
+.vote-btn:active {
+    transform: scale(1.5);
+    /* Subtle active transformation */
+}
+
+.blog-image {
+    width: 50%;
+    /* Ensures the image is responsive and fits the width of its container */
+    aspect-ratio: 16 / 9;
+    /* Sets the width to height ratio */
+    object-fit: contain;
+    /* Ensures the entire image is visible, may add letterboxing */
+    background-color: #f0f0f0;
+    /* Background color for any empty space due to aspect ratio */
+    border-radius: 5px;
+    /* Adds rounded corners for aesthetic purposes */
+    margin-bottom: 10px;
+    /* Provides spacing between the image and the text below */
+    margin-left: 10px;
+}
+
+.media-card h3,
+.media-card p,
+.media-card a {
+    margin: 10px;
+    /* Adds a 10px margin to all sides */
+}
+
+.media-card-blog {
+    flex: 0 0 100%;
+    /* Each card takes full width of the carousel */
+    max-width: 100%;
+    height: 70%;
+    /* Limit width to the carousel's width */
+    scroll-snap-align: start;
+    /* Ensures snapping aligns to the start of each media card */
+    margin: 0;
+    /* Remove margins between cards */
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    /* Styling */
+    overflow: hidden;
+    /* Ensures no overflow content is visible */
+
+}
+.media-card-blog:hover {
+    /* transform: scale(1); */
+    /* Subtle scale increase */
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    background-color: #d2dfe2;
+}
+footer {
+    text-align: center;
+    padding: 1px;
+    background-color: #b3d1de;
+    /* Lighter footer background */
+    color: #19262a;
+}

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Angry Mood Content</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="stylesheet" href="/static/happy-style.css">
+    <script src="/static/voting.js"></script>
+    <script src="/static/content-navigation.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            fetch('/get_votes')
+                .then(response => response.json())
+                .then(data => {
+                    for (const id in data) {
+                        document.getElementById(`upvote-count-${id}`).textContent = data[id].upvotes;
+                        document.getElementById(`downvote-count-${id}`).textContent = data[id].downvotes;
+                    }
+                })
+                .catch(error => console.error('Error fetching vote counts:', error));
+        });
+    </script>
+</head>
+
+<body>
+    <header>
+        <h1>Content for Angry Mood</h1>
+    </header>
+    <div class="content-wrapper">
+        <button id="prev-content" class="nav-btn">←</button>
+        <button id="next-content" class="nav-btn">→</button>
+        <main id="main-content" class="content-grid">
+
+            <div class="column" data-type="video">
+                <h2>Videos</h2>
+                <div class="carousel" id="video-carousel">
+                    <div class="media-card" data-id="video1">
+                        <iframe width="100%" height="100%"
+                            src="https://www.youtube.com/embed/acPAFyohdk0?si=Aq-AjcFt6m9ngt1I"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen></iframe>
+                        <div class="vote-container">
+                            <button class="vote-btn">👍</button><span id="upvote-count-video1">0</span>
+                            <button class="vote-btn">👎</button><span id="downvote-count-video1">0</span>
+                        </div>
+                    </div>
+                    <div class="media-card" data-id="video2">
+                        <iframe width="100%" height="100%" src="https://www.youtube.com/embed/another_video"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen></iframe>
+                        <div class="vote-container">
+                            <button class="vote-btn">👍</button><span id="upvote-count-video2">0</span>
+                            <button class="vote-btn">👎</button><span id="downvote-count-video2">0</span>
+                        </div>
+                    </div>
+
+                    <!-- Add more video items here -->
+                    <div class="media-card" data-id="video4">
+                        <iframe width="100%" height="100%" src="https://www.youtube.com/embed/yet_another_video"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen></iframe>
+                        <div class="vote-container">
+                            <button class="vote-btn">👍</button><span id="upvote-count-video4">0</span>
+                            <button class="vote-btn">👎</button><span id="downvote-count-video4">0</span>
+                        </div>
+                    </div>
+                    <div class="media-card" data-id="video6">
+                        <iframe width="100%" height="100%" src="https://www.youtube.com/embed/yet_another_video"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen></iframe>
+                        <div class="vote-container">
+                            <button class="vote-btn">👍</button><span id="upvote-count-video6">0</span>
+                            <button class="vote-btn">👎</button><span id="downvote-count-video6">0</span>
+                        </div>
+                    </div>
+                    <div class="media-card" data-id="video7">
+                        <iframe width="100%" height="100%" src="https://www.youtube.com/embed/yet_another_video"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen></iframe>
+                        <div class="vote-container">
+                            <button class="vote-btn">👍</button><span id="upvote-count-video7">0</span>
+                            <button class="vote-btn">👎</button><span id="downvote-count-video7">0</span>
+                        </div>
+                    </div>
+                    <div class="media-card" data-id="video8">
+                        <iframe width="100%" height="100%" src="https://www.youtube.com/embed/yet_another_video"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen></iframe>
+                        <div class="vote-container">
+                            <button class="vote-btn">👍</button><span id="upvote-count-video8">0</span>
+                            <button class="vote-btn">👎</button><span id="downvote-count-video8">0</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Spotify Column -->
+            <div class="column" data-type="music">
+                <h2>Music</h2>
+                <div class="carousel" id="video-carousel">
+                    <div class="media-card" data-id="music1">
+                        <iframe src="https://open.spotify.com/embed/track/4uLU6hMCjMI75M1A2tKUQC" width="100%"
+                            height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+                        <div class="vote-container">
+                            <button class="vote-btn">👍</button><span id="upvote-count-music1">0</span>
+                            <button class="vote-btn">👎</button><span id="downvote-count-music1">0</span>
+                        </div>
+                    </div>
+                    <div class="media-card" data-id="music2">
+                        <iframe src="https://open.spotify.com/embed/track/another_track" width="100%" height="80"
+                            frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+                        <div class="vote-container">
+                            <button class="vote-btn">👍</button><span id="upvote-count-music2">0</span>
+                            <button class="vote-btn">👎</button><span id="downvote-count-music2">0</span>
+                        </div>
+                    </div>
+                    <!-- Add more music items here -->
+                </div>
+            </div>
+            <!-- Blog Column -->
+            <div class="column" data-type="blog">
+                <h2>Articles</h2>
+                <div class="carousel" id="video-carousel">
+                    <div class="media-card" data-id="blog1">
+                        <img src="/static/placeholder_for_blog.jpg" alt="Blog Image">
+                        <h3>Blog Title</h3>
+                        <p>A short description of the blog article...</p>
+                        <a href="link_to_blog">Read More</a>
+                        <div class="vote-container">
+                            <button class="vote-btn">👍</button><span id="upvote-count-blog1">0</span>
+                            <button class="vote-btn">👎</button><span id="downvote-count-blog1">0</span>
+                        </div>
+                    </div>
+                    <div class="media-card" data-id="blog2">
+                        <img src="/static/another_placeholder_for_blog.jpg" alt="Blog Image">
+                        <h3>Another Blog Title</h3>
+                        <p>Another short description of the blog article...</p>
+                        <a href="link_to_another_blog">Read More</a>
+                        <div class="vote-container">
+                            <button class="vote-btn">👍</button><span id="upvote-count-blog2">0</span>
+                            <button class="vote-btn">👎</button><span id="downvote-count-blog2">0</span>
+                        </div>
+
+                    </div>
+                    <div class="media-card" data-id="blog2">
+                        <img src="/static/another_placeholder_for_blog.jpg" alt="Blog Image">
+                        <h3>Another Blog Title</h3>
+                        <p>Another short description of the blog article...</p>
+                        <a href="link_to_another_blog">Read More</a>
+                        <div class="vote-container">
+                            <button class="vote-btn">👍</button><span id="upvote-count-blog2">0</span>
+                            <button class="vote-btn">👎</button><span id="downvote-count-blog2">0</span>
+                        </div>
+
+                    </div>
+                </div>
+                <!-- Add more blog items here -->
+            </div>
+
+        </main>
+    </div>
+    <footer>
+        <p>© 2024 Mood-Based Content Recommendations</p>
+    </footer>
+</body>
+
+</html>
